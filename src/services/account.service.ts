@@ -1,9 +1,8 @@
 import axios from 'axios';
 
 class AccountService {
-	newAccount() {
-		console.log(`${process.env.REACT_API_URL}/account`)
-		return axios.post(`${process.env.REACT_API_URL}/account`);
+	async newAccount(user: any): Promise<any> {
+		return await axios.post(`${process.env.REACT_APP_API_URL}/account`, user);
 	}
 }
 

@@ -1,11 +1,9 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth/";
-
 class AuthService {
 	async login(username: string, password: string) {
 		return axios
-			.post(API_URL + "signin", {
+			.post(process.env.REACT_APP_API_URL + "signin", {
 				username,
 				password
 			})
@@ -23,7 +21,7 @@ class AuthService {
 	}
 
 	async register(username: string, email: string, password: string) {
-		return axios.post(API_URL + "signup", {
+		return axios.post(process.env.REACT_APP_API_URL + "signup", {
 			username,
 			email,
 			password
