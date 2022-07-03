@@ -1,7 +1,12 @@
 import accountService from "../../services/account.service";
-import { Input } from "./register.dto";
 
-export const handleRegister = async (user: Input) => {
+export const handleRegister = async (
+	user: {
+		name: string,
+		email: string,
+		cpf: string,
+		password: string
+	}) => {
 	try {
 		const response = await accountService.newAccount(user)
 		return response.data
