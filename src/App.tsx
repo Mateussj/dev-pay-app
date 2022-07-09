@@ -52,7 +52,7 @@ class App extends Component<Props, State> {
 		const { currentUser, showModeratorBoard, showAdminBoard } = this.state;
 
 		return (
-			<div>
+			<div className="body-container">
 				<nav className="navbar navbar-expand navbar-dark bg-dark">
 					<Link to={"/"} className="navbar-brand">
 						bezKoder
